@@ -2,6 +2,6 @@
 # Copyright 2016-2017 FUJITSU LIMITED
 
 memcached_config_file: /etc/sysconfig/memcached
-memcached_configure_network: True
+memcached_configure_network: False
 
-iptables_save_bin: /sbin/iptables-save
+iptables_save_bin: /usr/sbin/iptables-save

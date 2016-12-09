@@ -1,5 +1,6 @@
 ---
-# Copyright 2016 FUJITSU LIMITED
+# Copyright 2016-2017 FUJITSU LIMITED
+
 # Configure Memcached.
 
 - name: Copy Memcached configuration.

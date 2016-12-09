@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/geerlingguy/ansible-role-memcached.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-memcached)
 
-An Ansible Role that installs Memcached on RedHat/CentOS or Debian/Ubuntu Linux.
+An Ansible Role that installs Memcached on RedHat/CentOS Linux.
 
 ## Requirements
 
@@ -46,6 +46,7 @@ Normally memcached does not log anything. Change to "-v" to enable logging or to
 
 ## Optional
 - run_mode: One of Deploy, Stop, Install, Start, or Use. The default is Deploy which will do Install, Configure, then Start.
+- memcached_configure_network: Configure Firewalld and Iptables (default: `True`).
 - memcached_iptables_nodes: List of ip addresss that will have access do Memcached.
 
 ## Dependencies

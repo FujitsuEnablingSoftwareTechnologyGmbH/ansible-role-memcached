@@ -1,5 +1,9 @@
 ---
-# Copyright 2016 FUJITSU LIMITED
+# Copyright 2016-2017 FUJITSU LIMITED
 
 - name: Wait for memcached port
-  wait_for: port={{memcached_port}} host={{memcached_listen_ip | default('127.0.0.1') }} state=started timeout=180
+  wait_for:
+    port={{ memcached_port }}
+    host={{ memcached_listen_ip | default('127.0.0.1') }}
+    state=started
+    timeout=180

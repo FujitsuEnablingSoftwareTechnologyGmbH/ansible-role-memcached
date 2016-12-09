@@ -1,4 +1,6 @@
 ---
+# Copyright 2016-2017 FUJITSU LIMITED
+
 - name: restart memcached
   service: name=memcached state=restarted
 
@@ -6,4 +8,4 @@
   service: name=firewalld state=restarted enabled=yes
 
 - name: save iptables
-  command: /sbin/iptables-save
+  command: "{{ iptables_save_bin }}"

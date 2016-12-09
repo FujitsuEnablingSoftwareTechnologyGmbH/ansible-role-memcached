@@ -1,0 +1,45 @@
+# {{ ansible_managed }}
+
+## Path:        Network/WWW/Memcached
+## Description: start parameters for memcached.
+## Type:        string
+## Default:     "-d -l 127.0.0.1"
+## Config:      memcached
+#
+# start parameters for memcached.
+#
+# see man 1 memcached for more
+#
+# -l: Specify which IP address to listen on.
+# -p: Default connection port is 11211.
+# -c: Limit the number of simultaneous incoming connections.
+#     The daemon default is 1024.
+# -m: Start with a cap of 64 megs of memory. It's reasonable, and
+#     the daemon default. Note that the daemon will grow to this size,
+#     but does not start out holding this much memory.
+MEMCACHED_PARAMS="\
+-l {{ memcached_listen_ip }} \
+{{ memcached_log_verbosity }} \
+-p {{ memcached_port }} \
+-c {{ memcached_connections }} \
+-m {{ memcached_memory_limit }}"
+
+## Path:        Network/WWW/Memcached
+## Description: username memcached should run as
+## Type:        string
+## Default:     "memcached"
+## Config:      memcached
+#
+# username memcached should run as
+#
+MEMCACHED_USER="{{ memcached_user }}"
+
+## Path:        Network/WWW/Memcached
+## Description: group memcached should be run as
+## Type:        string
+## Default:     "memcached"
+## Config:      memcached
+#
+# group memcached should be run as
+#
+MEMCACHED_GROUP="{{ memcached_group }}"
