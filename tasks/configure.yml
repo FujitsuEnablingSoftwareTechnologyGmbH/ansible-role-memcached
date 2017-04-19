@@ -10,4 +10,11 @@
     owner: "{{ memcached_user }}"
     group: "{{ memcached_group }}"
     mode: 0644
-  notify: restart memcached
+  register: memcached_config
+
+- name: restart memcached if needed
+  service:
+    name=memcached
+    state=restarted
+    enabled=yes
+  when: memcached_config|changed
