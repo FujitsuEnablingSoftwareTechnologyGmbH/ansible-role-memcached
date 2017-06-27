@@ -12,6 +12,9 @@
     mode: 0644
   register: memcached_config
 
+# On SUSE, memcached listens by default only on 127.0.0.1 but other services
+# need to connect to memcached during the ansible-installer run. So
+# memcached needs to be restarted directly after reconfiguration.
 - name: restart memcached if needed
   service:
     name=memcached

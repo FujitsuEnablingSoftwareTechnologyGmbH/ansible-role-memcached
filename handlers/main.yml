@@ -2,7 +2,7 @@
 # Copyright 2016-2017 FUJITSU LIMITED
 
 - name: restart memcached
-  service: name=memcached state=restarted
+  service: name=memcached state=restarted enabled=yes
 
 - name: restart firewalld
   service: name=firewalld state=restarted enabled=yes

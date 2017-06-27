@@ -25,5 +25,5 @@
   when: run_mode == 'Status' or run_mode == 'Deploy'
 
 - name: Configure network
-  include:  configure_firewalld.yml
+  include: configure_firewalld.yml
   when: memcached_configure_network and (run_mode == 'Status' or run_mode == 'Deploy')
